@@ -4,10 +4,10 @@ A simple Python script that allows users to input grocery items one by one and o
 
 ## Features
 
-- Adds user-entered items to a list.
-- Converts all items to uppercase for consistency.
-- Counts the frequency of each item.
-- Outputs a sorted list with item counts.
+- Adds user-entered items to a list.  
+- Converts all items to uppercase for consistency.  
+- Counts the frequency of each item.  
+- Outputs a sorted list with item counts.  
 
 ## Usage
 
@@ -21,31 +21,32 @@ Press Ctrl+D (Linux/macOS) or Ctrl+Z (Windows) to finish input.
 
 The script will display the number of times each item was entered, sorted alphabetically.
 
-Example
+# Example
 Input:
-
-text
-Copy
-Edit
 apple
 banana
 apple
 orange
 banana
-Output:
 
-text
-Copy
-Edit
+Output:
 2 APPLE
 2 BANANA
 1 ORANGE
-Notes
+# Notes
 Only non-empty inputs are counted.
 
 Input is case-insensitive (all converted to uppercase).
 
-pgsql
-Copy
-Edit
- 
+# Test File
+A test.py file is provided to ensure that any modifications to the program do not break its functionality.
+You can run the tests with pytest in the terminal:
+
+``` bash
+pytest test.py
+```
+This will verify if the program still works as intended.
+
+# Required Libraries
+- pytest
+
