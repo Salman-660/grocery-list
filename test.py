@@ -1,10 +1,12 @@
 from grocery_list import grocery_list_counter
+import sys, io
 
 def test_grocery_counter():
-    data = ["apple", "banana", "Apple", "orange", "banana"]
+    data = "apple\nbanana\nApple\norange\nbanana\n"
+    sys.stdin = io.StringIO(data)  # simulate typing input
+
+    result = grocery_list_counter()  # no arguments, reads from "fake" stdin
+
     expected = {"APPLE": 2, "BANANA": 2, "ORANGE": 1}
-    
-    # Call function with list argument instead of interactive input
-    result = grocery_list_counter(data)
-    
-    assert dict(result) == expected
+    assert result == expected
+
