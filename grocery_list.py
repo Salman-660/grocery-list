@@ -1,29 +1,28 @@
-# Initialize a list with an empty string (not necessary, can start with empty list)
-list = [""]
+def main():
+    grocery_list_counter()
 
-# Remove the initial empty string to start with an actual empty list
-list.remove(list[0])
+def grocery_list_counter():
+    grocery_list = [""]  
+    grocery_list.remove(grocery_list[0])
 
-# Infinite loop to take user input until EOF (Ctrl+D)
-while True:
-    try:
-        # Read input from user, convert to uppercase
-        x = (input("")).upper()
+    print("Add your groceries here:")
 
-        # If input is not empty or only spaces, add to the list
-        if x.strip():
-            list.append(x)
+    while True:
+        try:
+            x = input("").upper()
+            if x.strip():  # Ignore empty input
+                grocery_list.append(x)
+            grocery_list.sort()
+        except EOFError:
+            break
 
-        # Sort the list after every new addition
-        list.sort()
+    count = {item: grocery_list.count(item) for item in grocery_list}  # Count occurrences of each item
 
-    # Break the loop when user signals end-of-input (Ctrl+D)
-    except EOFError:
-        break
+    for c in count:
+        print(f"{count[c]} {c}")
 
-# Create a dictionary with the count of each item in the list
-count = {item: list.count(item) for item in list}
+    return count   #add return for testing
 
-# Print the count and item for each unique grocery item
-for c in count:
-    print(f"{count[c]} {c}")
+
+if __name__ == "__main__":
+    main()
