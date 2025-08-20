@@ -1,14 +1,14 @@
- # Initialize a list with an empty string (not necessary, can start with empty list)
-list = [""]  
+# Initialize a list with an empty string (not necessary, can start with empty list)
+list = [""]
 
 # Remove the initial empty string to start with an actual empty list
-list.remove(list[0])  
+list.remove(list[0])
 
 # Infinite loop to take user input until EOF (Ctrl+D)
 while True:
     try:
         # Read input from user, convert to uppercase
-        x = (input("")).upper()  
+        x = (input("")).upper()
 
         # If input is not empty or only spaces, add to the list
         if x.strip():
